@@ -18,11 +18,6 @@
                 <h2 class="text-sm font-medium title-font  p-2">TidaRise株式会社</h2>
             </div>
         </div>
-
-
-
-
-
     </div>
 
 

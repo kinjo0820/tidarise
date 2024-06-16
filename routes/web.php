@@ -4,9 +4,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 Route::get('/', fn() => view('index'))->name('index');
 
@@ -18,7 +15,7 @@ Route::get('/messages', fn() => view('messages'))->middleware('auth');
 
 
 //プロフィール画面
-Route::get('/user/{id}',[UserController::class, 'show'])->name('users.show')->middleware('auth');
+Route::get('/user/{id}',[UserController::class, 'edit'])->name('users.edit')->middleware('auth');
 
 
 // ユーザー登録
@@ -28,6 +25,11 @@ Route::post('/users', [UserController::class, 'store'])->name('users.store');
 //　ユーザー認証
 Route::get('/users/login', [AuthController::class, 'showLoginForm'])->name('users.showLoginForm');
 Route::post('/users/login', [AuthController::class, 'login'])->name('users.login');
+
+//企業画面
+Route::get('/admin', fn() => view('admin.index'))->name('admin.index');
+Route::get('/admin/users', fn() => view('admin.users.index'))->name('admin.users.index');
+Route::get('/admin/offer', fn() => view('admin.offer.index'))->name('admin.offer.index');
 
 
 
