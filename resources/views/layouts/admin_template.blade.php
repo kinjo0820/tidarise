@@ -61,7 +61,12 @@
 
                     <a href="/" class="px-4 py-3 flex items-center space-x-4 rounded-md group">
                         <i class="fas fa-sign-out-alt"></i>
-                        <span>ユーザー画面</span>
+                        <span>ログアウト</span>
+                    </a>
+
+                    <a href="/admin/company" class="px-4 py-3 flex items-center space-x-4 rounded-md group">
+                        <i class="fa-solid fa-building"></i>
+                        <span>企業管理</span>
                     </a>
                 </div>
             </div>

@@ -26,8 +26,6 @@
                                 <option>南部</option>
                                 <option>中部</option>
                                 <option>北部</option>
-                                <option>離島</option>
-                                <option>企画</option>
                                 <option>その他</option>
                             </select>
                         </div>

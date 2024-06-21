@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('faculty_name')->nullable();
             $table->string('department_name')->nullable();
             $table->integer('graduation_year')->nullable();
-
         });
     }
 
