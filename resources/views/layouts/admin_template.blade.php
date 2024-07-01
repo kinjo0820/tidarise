@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @vite('resources/css/app.css')
-    <title>@yield('title','TidaRise管理画面')</title>
+    <title>@yield('title','Tidaインターン管理画面')</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
@@ -34,10 +34,10 @@
             <div class='flex h-screen justify-center  container mx-auto'>
                 <div class="p-8 space-y-5 text-xl">
 
-                    <a href="/admin" class="relative px-4 py-3 flex items-center space-x-4 rounded-lg ">
-                        <i class="fas fa-home"></i>
-                        <span class="-mr-1 font-medium">ホーム</span>
-                    </a>
+{{--                    <a href="/admin" class="relative px-4 py-3 flex items-center space-x-4 rounded-lg ">--}}
+{{--                        <i class="fas fa-home"></i>--}}
+{{--                        <span class="-mr-1 font-medium">ホーム</span>--}}
+{{--                    </a>--}}
 
                     <a href="/admin/offer" class="px-4 py-3 flex items-center space-x-4 rounded-md group">
                         <i class="fas fa-wallet"></i>

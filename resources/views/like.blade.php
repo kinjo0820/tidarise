@@ -1,5 +1,5 @@
 @extends('layouts.user_template')
-@section('title','TidaRise（ティーダライズ）長期インターンのマッチング')
+@section('title','TidaIntern（ティーダインターン）沖縄県に特化した長期インターンのマッチングサイト')
 @section('content')
     <div class=' justify-center  container mx-auto items-center grid grid-cols-1 md:lg:xl:grid-cols-3'>
         <div class='mx-2 bg-white p-6 mt-10'>

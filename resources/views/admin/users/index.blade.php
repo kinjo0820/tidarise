@@ -1,18 +1,8 @@
 @extends('layouts.admin_template')
-@section('title','TidaRise管理画面')
+@section('title','Tidaインターン管理画面')
 @section('content')
     <div class="mt-5">
-        <div class="p-4 rounded-lg shadow-md ">
-            <div class="flex flex-wrap justify-between h-full">
-                <div
-                    class="flex-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg flex flex-col items-center justify-center p-4 space-y-2 border border-gray-200 m-2">
-                    <i class="fa-solid fa-users text-white text-4xl"></i>
-                    <p class="text-white">総ユーザー数</p>
-                    <p class="text-white">1</p>
-                </div>
-            </div>
-        </div>
-       
+
         <div class="bg-white rounded-lg p-4 shadow-md my-4">
             <table class="table-auto w-full">
                 <thead>

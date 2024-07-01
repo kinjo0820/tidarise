@@ -22,20 +22,20 @@ class EditProfileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name_kana' => ['required', 'string', 'max:255'],
-            'university_name' => ['required', 'string', 'max:255'],
-            'faculty_name' => ['required', 'string', 'max:255'],
-            'department_name' => ['required', 'string', 'max:255'],
-            'graduation_year' => ['required', 'integer', 'between:1900,'],
+            'name' => ['required', 'string', 'max:255'],
+            'name_kana' => ['nullable', 'string', 'max:255'],
+            'address' => ['nullable', 'string', 'max:255'],
+            'gender' => ['nullable', 'string', 'max:255'],
+            'email' => ['required', 'email'],
+            'phone_number' => ['nullable', 'string', 'max:20'],
+            'birthday' => ['nullable', 'date'],
             'image' => [
-                'required',
+                'nullable', // 画像がアップロードされている場合のみ検証する
                 'file', // ファイルがアップロードされている
                 'image', // 画像ファイルである
-                'max:6000', // ファイル容量が2000kb以下である
+                'max:6000', // ファイル容量が6000kb以下である
                 'mimes:jpeg,jpg,png', // 形式はjpegかpng
-                // 'dimensions:min_width=100,min_height=100,max_width=300,max_height=300', // 画像の解像度が100px * 100px ~ 300px * 300px
             ],
-
         ];
     }
 }

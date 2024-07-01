@@ -1,5 +1,5 @@
 @extends('layouts.admin_template')
-@section('title','TidaRise管理画面')
+@section('title','Tidaインターン管理画面')
 @section('content')
     <section class="py-8">
         <div class="container px-4 mx-auto">

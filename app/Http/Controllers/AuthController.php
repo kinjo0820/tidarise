@@ -27,8 +27,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             // ミドルウェアに対応したリダイレクト(後述)
-            // 下記はredirect('/admin/blogs')に類似
-            return redirect()->intended('/');
+            return redirect()->intended('');
         }
 
         // ログイン情報が正しくない場合のみ実行される処理(return すると以降の処理は実行されないため)
@@ -38,5 +37,17 @@ class AuthController extends Controller
         return back()->withErrors([
             'email' => 'メールアドレスまたはパスワードが正しくありません',
         ])->onlyInput('email');
+    }
+
+    public function logout(Request $request)
+    {
+        // ログアウト処理
+        Auth::logout();
+        // 現在使っているセッションを無効化(セキュリティ対策のため)
+        $request->session()->invalidate();
+        // セッションを無効化を再生成(セキュリティ対策のため)
+        $request->session()->regenerateToken();
+
+        return redirect()->route('users.login');
     }
 }

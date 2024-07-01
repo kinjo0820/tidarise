@@ -1,5 +1,5 @@
 @extends('layouts.admin_template')
-@section('title','TidaRise管理画面')
+@section('title','Tidaインターン管理画面')
 @section('content')
     <div class="mt-5">
         <div class="bg-white rounded-lg p-4 shadow-md my-4">

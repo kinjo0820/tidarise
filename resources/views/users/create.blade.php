@@ -1,13 +1,11 @@
 @extends('layouts.user_template')
-@section('title','TidaRise（ティーダライズ）長期インターンのマッチング')
+@section('title','TidaIntern（ティーダインターン）沖縄県に特化した長期インターンのマッチングサイト')
 @section('content')
-
     <section class="py-8 bg-orange-50">
         <div class="container px-4 mx-auto justify-center items-center md:w-1/3">
             <div class="py-4 rounded bg-white">
                 <form action="{{ route('users.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
-
                     <div class="px-6 pb-4  text-center">
                         <h3 class="text-xl">アカウント登録</h3>
                     </div>

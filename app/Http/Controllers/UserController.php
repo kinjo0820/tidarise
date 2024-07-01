@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
+use App\Models\Education;
+use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,9 +31,31 @@ class UserController extends Controller
     {
         $validated = $request->validated();
         $validated['password'] = Hash::make($validated['password']);
-        User::create($validated);
+        $user = User::create($validated);
 
-        return to_route('index')->with('success', 'User has been created.');
+        $userId = $user->id;
+
+        // プロフィールを作成
+        $profile = new Profile([
+            'user_id' => $userId,
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'updated_at' => now(),
+            'created_at' => now(),
+        ]);
+        $user->profile()->save($profile);
+
+        // 学歴を作成
+        $education = new Education([
+            'user_id' => $userId,
+            'updated_at' => now(),
+            'created_at' => now(),
+        ]);
+        $user->educations()->save($education);
+
+
+        // ログインページのアクションにリダイレクト
+        return redirect()->route('users.showLoginForm');
 
     }
 
@@ -40,7 +64,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        
+
     }
 
     /**
@@ -48,8 +72,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        $user = Auth::user();
-        return view('users.edit',['user'=>$user]);
+
     }
 
     /**

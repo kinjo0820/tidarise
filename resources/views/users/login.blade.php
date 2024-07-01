@@ -1,5 +1,5 @@
 @extends('layouts.user_template')
-@section('title','TidaRise（ティーダライズ）長期インターンのマッチング')
+@section('title','TidaIntern（ティーダインターン）沖縄県に特化した長期インターンのマッチングサイト')
 @section('content')
 
     <!-- This is an example component -->
